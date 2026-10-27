@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/jetbrains-mono";
+
+@theme {
+  --font-sans: "DM Sans Variable", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", "DM Sans Variable", sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+  --color-bg: #f3ede2;       /* paper */
+  --color-panel: #ffffff;
+  --color-panel2: #e9e1d0;
+  --color-line: #1b1b2f;     /* ink outline */
+  --color-ink: #1b1b2f;
+  --color-mute: #565669;
+  --color-accent: #2f3cf0;   /* cobalt */
+  --color-warm: #d9480f;     /* orange */
+  --color-sky: #0b7a5f;      /* green */
+  --color-hot: #c2255c;      /* pink */
+  --color-pop: #ffd23f;      /* highlighter yellow */
+  --color-accent-soft: #e1e4ff;
+  --color-warm-soft: #ffe3d1;
+  --color-sky-soft: #d3f1e5;
+  --color-hot-soft: #ffd8e6;
+  --color-pop-soft: #fff1b3;
+}
+
+html, body, #root { height: 100%; margin: 0; background: var(--color-bg); color: var(--color-ink); font-family: var(--font-sans); overflow: hidden; }
+.stage { width: 1920px; height: 1080px; transform-origin: top left; position: absolute; left: 0; top: 0; }
+.display { font-family: var(--font-display); letter-spacing: -0.025em; }
+.hard { box-shadow: 6px 6px 0 0 var(--color-ink); }
+.hard-sm { box-shadow: 4px 4px 0 0 var(--color-ink); }
+.press { transition: transform .08s, box-shadow .08s; cursor: pointer; }
+.press:active { transform: translate(4px, 4px); box-shadow: 0 0 0 0 var(--color-ink); }
+[data-grab] { cursor: grab; touch-action: none; user-select: none; }
+[data-grab]:active { cursor: grabbing; }
